@@ -55,7 +55,7 @@ class Timer:
         self.interval = self.end - self.start
 
 
-#this is where shit is happening (I should really add some functionality to enable/disable speciffic sorting algorithms)
+#this is where shit is happening (I should really add some functionality to enable/disable speciffic sorting algorithms, YES YOU MR BUBBLESORT!)
 print "making array of ", size, " elements:\n\n"
 
 with Timer() as t:
