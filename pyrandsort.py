@@ -1,6 +1,6 @@
 import re, string, sys, random, time
 from random import randrange
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(10000)    #to prevent the interpeter believing I've made an infinite loop and make things die.
 
 size = int(sys.argv[1])     #system argument declaring size of array to sort
 rng = int(sys.argv[2])      #system argument declaring range of numbers to sort
