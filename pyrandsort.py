@@ -5,13 +5,10 @@ sys.setrecursionlimit(10000)
 size = int(sys.argv[1])     #system argument declaring size of array to sort
 rng = int(sys.argv[2])      #system argument declaring range of numbers to sort
 
-numbers = [random.randrange(rng) for x in range(size)]
+numbers = [random.randrange(rng) for x in range(size)]      #declares an array of random integers within range and size passed from system arguments
 
-def randomize(r):
 
-	ret = random.randrange(r)			
-	return ret;
-
+#bubble sort, damn this shit is slow!
 def bsort(nums):
 
 	end=len(nums) -1
@@ -27,6 +24,7 @@ def bsort(nums):
 			end=swapped
 	return nums
 
+#much quicker!
 def quickSort(nums):
     less = []
     pivotList = []
@@ -46,6 +44,7 @@ def quickSort(nums):
         more = quickSort(more)
         return less + pivotList + more
 
+#Timer class to time an operation
 class Timer:    
     def __enter__(self):
         self.start = time.clock()
@@ -56,14 +55,13 @@ class Timer:
         self.interval = self.end - self.start
 
 
+#this is where shit is happening (I should really add some functionality to enable/disable speciffic sorting algorithms)
 print "making array of ", size, " elements:\n\n"
 
-#print "before sorting:", (numbers)
-
-'''with Timer() as t:
+with Timer() as t:
     bsort(numbers)
 
-print "bubblesort used:", t.interval*1000 , "milisecondsseconds to sort the array"'''
+print "bubblesort used:", t.interval*1000 , "milisecondsseconds to sort the array"
 
 with Timer() as t:
 	quickSort(numbers)
